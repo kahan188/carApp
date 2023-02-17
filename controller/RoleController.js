@@ -42,13 +42,13 @@ module.exports.deleteRole =((req,res) =>{
 })
 module.exports.getRoleById = ((req,res)=>{
     var id = req.params.id;
-    roleSchema.findById(id,(req,res)=>{
+    roleSchema.findById(id,(err,data)=>{
         if(err){
             res.status(500).json({
                 message:"error",
             })
         }
-        else{f
+        else{
             if(data!=null){
                 res.status(200).json({
                     message:"success",
@@ -80,7 +80,7 @@ module.exports.getAllRoles = ((req,res)=>{
 })
 module.exports.updateRole=((req,res)=>{
     var id = req.params.id
-    roleSchema.findByIdAndUpdate(id,(req,res)=>{
+    roleSchema.findByIdAndUpdate(id,(err,data)=>{
         if(err){
             res.status(500).json({
                 message:"error",

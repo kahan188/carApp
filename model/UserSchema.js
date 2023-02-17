@@ -1,10 +1,11 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const userSchema = new Schema({
-    role:{
-        type:Schema.Types.ObjectId
+    role:[{
+        type:Schema.Types.ObjectId,
+        ref:'role'
         
-    },
+    }],
     name:{
         type:String,
     },
